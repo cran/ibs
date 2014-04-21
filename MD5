@@ -1,4 +1,4 @@
-4c8ab512086c72584c295fc98c3b8cb9 *DESCRIPTION
+04b0eff9430f7e21a446a51becf797f9 *DESCRIPTION
 0dd58274ab7483f2b2cfd716df2ed748 *NAMESPACE
 1cec55aa78fb309acef96d9863b48cf9 *R/bsbases.R
 fbfc58939ee7883121847541d188e885 *R/bspline.R
@@ -6,6 +6,6 @@ d6bf648aca6d5b29e7ef0eb143bf44b0 *R/ibs.R
 0a45e64cf37461eb425bbcc2f7bda9be *man/bsbases.Rd
 19cde12adca363a4e0ad0320961a300d *man/bspline.Rd
 76414fc07b7ba39da4eb36ed6759ecdc *man/ibs-package.Rd
-275ccde9ddd34c3c0d03ba58f93635b3 *man/ibs.Rd
+183df20e6834b62a774afd7f19552a77 *man/ibs.Rd
 9a145de07b6fbd2f723325ba6ccdf5c3 *src/bsp.h
 e8286e448a5955e8fbdb6b816088854c *src/bsp1.c

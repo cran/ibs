@@ -60,17 +60,19 @@ require(splines)
 integrate(function(x)splineDesign(kns,x,3) \%*\% co,0,0.75)
 ibs(0.75,kns,3,co)
 
-set.seed(2); kns <- sort(rnorm(50))
-o <- 4; co <- rnorm(length(kns)-o)
+set.seed(2);
+nk <- 20; o <- 4;
+kns <- sort(rnorm(nk))
+co <- rnorm(nk-o)
 op <- par(mfrow=c(2,1))
-curve(ibs(x,kns,o,co),kns[1],kns[50],n=100001,xlab="x",ylab="ibs")
-bspl <- curve(bspline(x,kns,o,co),kns[1],kns[50],n=100001,
+curve(ibs(x,kns,o,co),kns[1],kns[nk],n=1001,xlab="x",ylab="ibs")
+bspl <- curve(bspline(x,kns,o,co),kns[1],kns[nk],n=1001,
               xlab="x",ylab="B-spline")
 abline(h=0,col="gray",lty=2)
 par(op)
 op <- par(new=TRUE)
 plot(0,0,xlim=range(kns),xaxt="n",yaxt="n",type="n",xlab="",ylab="",bty="n")
-abline(v=bspl$x[abs(bspl$y)<1e-3],col="gray")
+abline(v=bspl$x[abs(bspl$y)<2e-2],col="gray")
 par(op)
 
 }
