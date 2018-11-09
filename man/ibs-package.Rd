@@ -2,30 +2,32 @@
 \alias{ibs-package}
 \docType{package}
 \title{
-  Integrated B-spline function
+  A short title line describing what the package does
 }
 \description{
   Evaluate the integral of a B-spline function, or the B-spline function
-  itself, or the B-spline basis functions.
+  itself, or the B-spline basis functions.  
 }
 \details{
-\tabular{ll}{
-Package: \tab ibs\cr
-Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2014-04-12\cr
-License: \tab GPL (>=2)\cr
-}
+  The function \code{bsbases} calculates the values of the B-spline basis
+  functions defined by knots \code{knots} and order \code{ord} at sites
+  \code{x}. The function \code{bspline} evaluates the B-spline function
+  defined by knots \code{knots}, order \code{ord}, and coefficients
+  \code{coef} at sites \code{x}. The function \code{ibs} calculates the
+  integrals of the B-spline function defined by knots \code{knots},
+  order \code{ord}, and coefficients \code{coef} from the smallest knot
+  to each of the values in \code{x}.
 }
 \author{
-Feng Chen <feng.chen@unsw.edu.au>
+Creator: Feng Chen
+
 Maintainer: Feng Chen <feng.chen@unsw.edu.au>
 }
 \references{
-  de Boor, C. (2001) A Practical Guide to Splines. Revised Edition. Springer: New York.
+    de Boor, C. (2001) A Practical Guide to Splines. Revised Edition. Springer: New York.
 }
 \keyword{ package }
+\keyword{ Splines}
 \seealso{
   \code{\link[splines]{splineDesign}}
 }
-

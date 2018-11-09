@@ -1,2 +1,3 @@
-useDynLib(ibs)
+useDynLib(ibs, .registration=TRUE)
 exportPattern("^[[:alpha:]]+")
+importFrom(Rcpp, evalCpp)

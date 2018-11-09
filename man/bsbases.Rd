@@ -23,9 +23,7 @@ bsbases(x, knots, ord)
     An integer >=1. The order of the B-spline bases. Equals degree plus 1.
 }
 }
-% \details{
-% %%  ~~ If necessary, more details than the description above ~~
-% }
+
 \value{
   A numerical matrix of \code{length(x)} rows and
   \code{length(knots)-ord} columns.
@@ -41,8 +39,6 @@ bsbases(x, knots, ord)
   function from the \code{splines} package, this version of the B-spline
   basis functions are left-continuous at the rightmost knot.   
 }
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
     \code{\link[splines]{splineDesign}}

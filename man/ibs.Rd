@@ -1,20 +1,20 @@
 \name{ibs}
 \alias{ibs}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Integrated B-spline
+Integratal of a B-spline function
 }
 \description{
 Calculate the integral of a B-spline function.
 }
 \usage{
-ibs(x, knots, ord, coef = rep(1, length(knots) - ord))
+ibs(x, knots, ord=4, coef = rep(1, length(knots) - ord))
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-    Numerical value or vector. The value(s) at which to evaluate the integral of the B-spline; must
-    be in the bewteen \code{min(knots)} and \code{max(knots)}. 
+    Numerical value or vector. The value(s) at which to evaluate the
+    integral of the B-spline; must be in the interval bewteen the
+    smallest knot to the \code{(nknots-ord)}th largest knot.  
 }
   \item{knots}{
     Numerical vector. The knot positions/sites of the B-spline function to be integrated.
@@ -43,11 +43,6 @@ ibs(x, knots, ord, coef = rep(1, length(knots) - ord))
 \author{
   Feng Chen <feng.chen@unsw.edu.au>
 }
-% \note{
-%   %%  ~~further notes~~
-% }
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
   \code{\link{bspline}}
@@ -55,25 +50,8 @@ ibs(x, knots, ord, coef = rep(1, length(knots) - ord))
 \examples{
 kns <- c(rep(0,4),1:4*0.2,rep(1,4))
 co <- rnorm(length(kns)-3)
-integrate(bspline,knots=kns,ord=3,coef=co,0,0.75)
-require(splines)
-integrate(function(x)splineDesign(kns,x,3) \%*\% co,0,0.75)
-ibs(0.75,kns,3,co)
-
-set.seed(2);
-nk <- 20; o <- 4;
-kns <- sort(rnorm(nk))
-co <- rnorm(nk-o)
-op <- par(mfrow=c(2,1))
-curve(ibs(x,kns,o,co),kns[1],kns[nk],n=1001,xlab="x",ylab="ibs")
-bspl <- curve(bspline(x,kns,o,co),kns[1],kns[nk],n=1001,
-              xlab="x",ylab="B-spline")
-abline(h=0,col="gray",lty=2)
-par(op)
-op <- par(new=TRUE)
-plot(0,0,xlim=range(kns),xaxt="n",yaxt="n",type="n",xlab="",ylab="",bty="n")
-abline(v=bspl$x[abs(bspl$y)<2e-2],col="gray")
-par(op)
-
+integrate(bspline,knots=kns,ord=3,coef=co,0,0.95)
+integrate(function(x)bsbases(x,kns,3) \%*\% co,0,0.95)
+ibs(0.95,kns,3,co)
 }
 \keyword{math}
